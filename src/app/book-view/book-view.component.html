@@ -1,3 +1,20 @@
-<p>
-  book-view works!
-</p>
+<div *ngIf="book">
+  <h2>{{book.title}}</h2>
+  <div>Author: {{book.author}}</div>
+  <h2>Reviews</h2>
+  <div *ngFor="let review of book.reviews | refirebase">
+    <review [review]="review"></review>
+    
+  </div>
+</div>
+
+<h2>Add a Review</h2>
+<textarea [(ngModel)]="newReview.body"></textarea>
+<select [(ngModel)]="newReview.rating">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  </select>
+  <button md-raised-button type="button" (click)="review(book.$key, newReview)">Review</button>

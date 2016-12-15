@@ -13,6 +13,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookNewComponent } from './book-new/book-new.component';
 import { BookViewComponent } from './book-view/book-view.component';
 import { UserComponent } from './user/user.component';
+import { ReviewComponent } from './review.component';
 import { RefirebasePipe } from './refirebase.pipe';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { RefirebasePipe } from './refirebase.pipe';
     BookNewComponent,
     BookViewComponent,
     UserComponent,
-    RefirebasePipe
+    RefirebasePipe,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,

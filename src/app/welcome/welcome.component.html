@@ -2,12 +2,13 @@
 <fieldset>
   <legend>Register</legend>
   <form>
-    <md-input placeholder="Name" name="name"></md-input>
-    <md-input placeholder="Alias" name="alias"></md-input>
-    <md-input placeholder="Email" name="email" type="email"></md-input>
-    <md-input placeholder="Password" name="password" type="password"></md-input>
-    <md-input placeholder="Confirm Password" name="passwordConfirmation" type="password"></md-input>
-    <button md-raised-button color="primary" routerLink="/books" type="button">Register</button>
+    <md-input placeholder="Name" name="name" [(ngModel)]="user.name"></md-input>
+    <md-input placeholder="Alias" name="alias" [(ngModel)]="user.alias"></md-input>
+    <md-input placeholder="Email" name="email" type="email" [(ngModel)]="user.email"></md-input>
+    <md-input placeholder="Password" name="password" type="password" [(ngModel)]="user.password"></md-input>
+    <md-input placeholder="Confirm Password" name="passwordConfirmation" type="password" [(ngModel)]="user.passwordConfirmation"></md-input>
+    <div *ngIf="registrationError">{{registrationError}}</div>
+    <button md-raised-button color="primary" (click)="register(user.email,user.password)" type="button">Register</button>
   </form>
 </fieldset>
 
@@ -15,8 +16,9 @@
 <fieldset>
   <legend>Login</legend>
   <form>
-    <md-input placeholder="Email" name="email"></md-input>
-    <md-input placeholder="Password" name="password" type="password"></md-input>
-    <button md-raised-button color="primary" type="button">Login</button>
+    <md-input placeholder="Email" name="email" [(ngModel)]="user.email"></md-input>
+    <md-input placeholder="Password" name="password" type="password" [(ngModel)]="user.password"></md-input>
+    <div *ngIf="loginError">{{loginError}}</div>
+    <button md-raised-button color="primary" type="button" (click)="login(user.email, user.password)">Login</button>
   </form>
 </fieldset>
