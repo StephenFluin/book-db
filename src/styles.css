@@ -5,3 +5,11 @@
 md-card { margin: 16px;}
 md-card-actions { text-align:right;}
 md-card-actions button {margin:16px !important;}
+
+md-toolbar a {
+    color:white;
+}
+
+app-root md-input {display: block;margin:32px 16px;}
+fieldset {margin:16px;padding:16px;}
+fieldset legend {margin:16px;}

@@ -23,6 +23,7 @@
     "@angular/router": "3.2.3",
     "@angular/service-worker": "^0.7.5",
     "@types/gulp": "^3.8.32",
+    "angularfire2": "^2.0.0-beta.6",
     "core-js": "^2.4.1",
     "gulp": "^3.9.1",
     "run-sequence": "^1.2.2",

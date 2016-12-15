@@ -1,3 +1,22 @@
-<p>
-  welcome works!
-</p>
+<h2>Welcome</h2>
+<fieldset>
+  <legend>Register</legend>
+  <form>
+    <md-input placeholder="Name" name="name"></md-input>
+    <md-input placeholder="Alias" name="alias"></md-input>
+    <md-input placeholder="Email" name="email" type="email"></md-input>
+    <md-input placeholder="Password" name="password" type="password"></md-input>
+    <md-input placeholder="Confirm Password" name="passwordConfirmation" type="password"></md-input>
+    <button md-raised-button color="primary" routerLink="/books" type="button">Register</button>
+  </form>
+</fieldset>
+
+
+<fieldset>
+  <legend>Login</legend>
+  <form>
+    <md-input placeholder="Email" name="email"></md-input>
+    <md-input placeholder="Password" name="password" type="password"></md-input>
+    <button md-raised-button color="primary" type="button">Login</button>
+  </form>
+</fieldset>

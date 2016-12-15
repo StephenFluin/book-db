@@ -1,3 +1,16 @@
-<p>
-  book-list works!
-</p>
+Recent Book Reviews
+
+<h2>Recent Book Reviews:</h2>
+<div *ngFor="let book of recentBooks | async">
+  <a [routerLink]="['books',book.$key]">{{book.title}}</a>
+  Rating: *****
+  <div *ngFor="let comment of book.comments">
+    <div><a [routerLink]="['users',comment.author]">{{comment.authorName}}</a> says: {{comment.body}}</div>
+    <div>Posted on {{comment.date}}</div>
+  </div>
+</div>
+
+<h2>Other Books</h2>
+<div *ngFor="let book of books | async">
+  <div><a [routerLink]="['books',book.$key]">{{book.name}}</a></div>
+</div>

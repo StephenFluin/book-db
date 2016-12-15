@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -26,13 +28,21 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      {path: '', component: WelcomeComponent},
-      {path: 'books', component: BookListComponent},
-      {path: 'books/:id', component: BookViewComponent},
-      {path: 'users/:id', component: UserComponent},
-      {path: 'books/add', component: BookNewComponent},
+      { path: '', component: WelcomeComponent },
+      { path: 'books', component: BookListComponent },
+      { path: 'books/:id', component: BookViewComponent },
+      { path: 'users/:id', component: UserComponent },
+      { path: 'books/add', component: BookNewComponent },
     ]),
     MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(
+      {
+        apiKey: "AIzaSyBwBT9AWm6soQ4aB0V_0BFCxiKYBwGYT88",
+        authDomain: "book-db.firebaseapp.com",
+        databaseURL: "https://book-db.firebaseio.com",
+        storageBucket: "book-db.appspot.com",
+      },
+      { method: AuthMethods.Password, provider: AuthProviders.Password }),
   ],
   providers: [],
   bootstrap: [AppComponent]
