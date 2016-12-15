@@ -1,3 +1,17 @@
-<p>
-  book-new works!
-</p>
+<h2>Add a New Book Title and a Review</h2>
+<form ngNoForm>
+  <md-input placeholder="Book Title" [(ngModel)]="book.title"></md-input>
+  <md-input placeholder="Author" [(ngModel)]="book.author"></md-input>
+  <textarea [(ngModel)]="review.body"></textarea>
+  Rating <select [(ngModel)]="review.rating">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    </select>
+    <button type="button" md-raised-button (click)="add(book, review)">Add Book and Review</button>
+
+
+</form>
+{{response | async}}

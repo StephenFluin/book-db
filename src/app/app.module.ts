@@ -13,6 +13,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookNewComponent } from './book-new/book-new.component';
 import { BookViewComponent } from './book-view/book-view.component';
 import { UserComponent } from './user/user.component';
+import { RefirebasePipe } from './refirebase.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UserComponent } from './user/user.component';
     BookNewComponent,
     BookViewComponent,
     UserComponent,
+    RefirebasePipe
   ],
   imports: [
     BrowserModule,
@@ -30,9 +32,9 @@ import { UserComponent } from './user/user.component';
     RouterModule.forRoot([
       { path: '', component: WelcomeComponent },
       { path: 'books', component: BookListComponent },
+      { path: 'books/add', component: BookNewComponent },
       { path: 'books/:id', component: BookViewComponent },
       { path: 'users/:id', component: UserComponent },
-      { path: 'books/add', component: BookNewComponent },
     ]),
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(

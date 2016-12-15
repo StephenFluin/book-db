@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
+import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-book-list',
@@ -9,9 +9,9 @@ import { Observable } from 'rxjs/Observable';
 export class BookListComponent implements OnInit {
   books;
   recentBooks;
-  constructor() { 
-    this.books = Observable.of([]);
-    this.recentBooks = this.books;
+  constructor(af: AngularFire) { 
+    this.recentBooks = af.database.list('/books');
+    this.books = af.database.list('/books');
   }
 
   ngOnInit() {
